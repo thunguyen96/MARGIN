@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="timKiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="timKiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timKiemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNopLuuKi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soLuuKi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNopLuuKiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraNopLuuKiResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraRutLuuKi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soLuuKi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soLuongToiDa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraRutLuuKiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraRutLuuKiResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nopLuuKi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soLuong" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="soLuongNop" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nopLuuKiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nopLuuKiResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rutLuuKi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soLuong" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="soLuongRut" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rutLuuKiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rutLuuKiResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNhapSoTKLK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNhapSoTKLKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraNhapSoTKLKResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="timKiemSoapIn">
+    <wsdl:part name="parameters" element="tns:timKiem" />
+  </wsdl:message>
+  <wsdl:message name="timKiemSoapOut">
+    <wsdl:part name="parameters" element="tns:timKiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraNopLuuKiSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraNopLuuKi" />
+  </wsdl:message>
+  <wsdl:message name="KtraNopLuuKiSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraNopLuuKiResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraRutLuuKiSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraRutLuuKi" />
+  </wsdl:message>
+  <wsdl:message name="KtraRutLuuKiSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraRutLuuKiResponse" />
+  </wsdl:message>
+  <wsdl:message name="nopLuuKiSoapIn">
+    <wsdl:part name="parameters" element="tns:nopLuuKi" />
+  </wsdl:message>
+  <wsdl:message name="nopLuuKiSoapOut">
+    <wsdl:part name="parameters" element="tns:nopLuuKiResponse" />
+  </wsdl:message>
+  <wsdl:message name="rutLuuKiSoapIn">
+    <wsdl:part name="parameters" element="tns:rutLuuKi" />
+  </wsdl:message>
+  <wsdl:message name="rutLuuKiSoapOut">
+    <wsdl:part name="parameters" element="tns:rutLuuKiResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraNhapSoTKLKSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraNhapSoTKLK" />
+  </wsdl:message>
+  <wsdl:message name="KtraNhapSoTKLKSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraNhapSoTKLKResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QLLuukiBUSSoap">
+    <wsdl:operation name="timKiem">
+      <wsdl:input message="tns:timKiemSoapIn" />
+      <wsdl:output message="tns:timKiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopLuuKi">
+      <wsdl:input message="tns:KtraNopLuuKiSoapIn" />
+      <wsdl:output message="tns:KtraNopLuuKiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutLuuKi">
+      <wsdl:input message="tns:KtraRutLuuKiSoapIn" />
+      <wsdl:output message="tns:KtraRutLuuKiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nopLuuKi">
+      <wsdl:input message="tns:nopLuuKiSoapIn" />
+      <wsdl:output message="tns:nopLuuKiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rutLuuKi">
+      <wsdl:input message="tns:rutLuuKiSoapIn" />
+      <wsdl:output message="tns:rutLuuKiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhapSoTKLK">
+      <wsdl:input message="tns:KtraNhapSoTKLKSoapIn" />
+      <wsdl:output message="tns:KtraNhapSoTKLKSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QLLuukiBUSSoap" type="tns:QLLuukiBUSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopLuuKi">
+      <soap:operation soapAction="http://tempuri.org/KtraNopLuuKi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutLuuKi">
+      <soap:operation soapAction="http://tempuri.org/KtraRutLuuKi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nopLuuKi">
+      <soap:operation soapAction="http://tempuri.org/nopLuuKi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rutLuuKi">
+      <soap:operation soapAction="http://tempuri.org/rutLuuKi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhapSoTKLK">
+      <soap:operation soapAction="http://tempuri.org/KtraNhapSoTKLK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QLLuukiBUSSoap12" type="tns:QLLuukiBUSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap12:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopLuuKi">
+      <soap12:operation soapAction="http://tempuri.org/KtraNopLuuKi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutLuuKi">
+      <soap12:operation soapAction="http://tempuri.org/KtraRutLuuKi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nopLuuKi">
+      <soap12:operation soapAction="http://tempuri.org/nopLuuKi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rutLuuKi">
+      <soap12:operation soapAction="http://tempuri.org/rutLuuKi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhapSoTKLK">
+      <soap12:operation soapAction="http://tempuri.org/KtraNhapSoTKLK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QLLuukiBUS">
+    <wsdl:port name="QLLuukiBUSSoap" binding="tns:QLLuukiBUSSoap">
+      <soap:address location="http://localhost:50136/QLLuukiBUS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QLLuukiBUSSoap12" binding="tns:QLLuukiBUSSoap12">
+      <soap12:address location="http://localhost:50136/QLLuukiBUS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

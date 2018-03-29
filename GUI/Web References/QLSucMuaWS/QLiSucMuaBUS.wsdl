@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="timKiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="timKiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timKiemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layDSMaCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layDSMaCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layDSMaCKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layThongtinCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layThongtinCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layThongtinCKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNhap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="giaMua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soLuongMua" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaTran" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaSan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNhapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraNhapResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SoTKLK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSLResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemMuaCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sl" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="gtMua" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="tienMat" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemMuaCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemMuaCKResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="timKiemSoapIn">
+    <wsdl:part name="parameters" element="tns:timKiem" />
+  </wsdl:message>
+  <wsdl:message name="timKiemSoapOut">
+    <wsdl:part name="parameters" element="tns:timKiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="layDSMaCKSoapIn">
+    <wsdl:part name="parameters" element="tns:layDSMaCK" />
+  </wsdl:message>
+  <wsdl:message name="layDSMaCKSoapOut">
+    <wsdl:part name="parameters" element="tns:layDSMaCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="layThongtinCKSoapIn">
+    <wsdl:part name="parameters" element="tns:layThongtinCK" />
+  </wsdl:message>
+  <wsdl:message name="layThongtinCKSoapOut">
+    <wsdl:part name="parameters" element="tns:layThongtinCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraNhapSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraNhap" />
+  </wsdl:message>
+  <wsdl:message name="KtraNhapSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraNhapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSL" />
+  </wsdl:message>
+  <wsdl:message name="GetSLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemMuaCKSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemMuaCK" />
+  </wsdl:message>
+  <wsdl:message name="ThemMuaCKSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemMuaCKResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QLiSucMuaBUSSoap">
+    <wsdl:operation name="timKiem">
+      <wsdl:input message="tns:timKiemSoapIn" />
+      <wsdl:output message="tns:timKiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="layDSMaCK">
+      <wsdl:input message="tns:layDSMaCKSoapIn" />
+      <wsdl:output message="tns:layDSMaCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="layThongtinCK">
+      <wsdl:input message="tns:layThongtinCKSoapIn" />
+      <wsdl:output message="tns:layThongtinCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhap">
+      <wsdl:input message="tns:KtraNhapSoapIn" />
+      <wsdl:output message="tns:KtraNhapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSL">
+      <wsdl:input message="tns:GetSLSoapIn" />
+      <wsdl:output message="tns:GetSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemMuaCK">
+      <wsdl:input message="tns:ThemMuaCKSoapIn" />
+      <wsdl:output message="tns:ThemMuaCKSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QLiSucMuaBUSSoap" type="tns:QLiSucMuaBUSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDSMaCK">
+      <soap:operation soapAction="http://tempuri.org/layDSMaCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layThongtinCK">
+      <soap:operation soapAction="http://tempuri.org/layThongtinCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhap">
+      <soap:operation soapAction="http://tempuri.org/KtraNhap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSL">
+      <soap:operation soapAction="http://tempuri.org/GetSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMuaCK">
+      <soap:operation soapAction="http://tempuri.org/ThemMuaCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QLiSucMuaBUSSoap12" type="tns:QLiSucMuaBUSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap12:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDSMaCK">
+      <soap12:operation soapAction="http://tempuri.org/layDSMaCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layThongtinCK">
+      <soap12:operation soapAction="http://tempuri.org/layThongtinCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNhap">
+      <soap12:operation soapAction="http://tempuri.org/KtraNhap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSL">
+      <soap12:operation soapAction="http://tempuri.org/GetSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMuaCK">
+      <soap12:operation soapAction="http://tempuri.org/ThemMuaCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QLiSucMuaBUS">
+    <wsdl:port name="QLiSucMuaBUSSoap" binding="tns:QLiSucMuaBUSSoap">
+      <soap:address location="http://localhost:50136/QLiSucMuaBUS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QLiSucMuaBUSSoap12" binding="tns:QLiSucMuaBUSSoap12">
+      <soap12:address location="http://localhost:50136/QLiSucMuaBUS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

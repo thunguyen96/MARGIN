@@ -1,0 +1,5 @@
+D:\FSS_MARGIN\MARGIN\DTO\bin\Debug\DTO.dll
+D:\FSS_MARGIN\MARGIN\DTO\bin\Debug\DTO.pdb
+D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.dll
+D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.pdb

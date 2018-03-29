@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="layDSKhachHang">
+        <s:complexType />
+      </s:element>
+      <s:element name="layDSKhachHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layDSKhachHangResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layMotKhachHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layMotKhachHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layMotKhachHangResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soCMND" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKHResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKHSDT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SDT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKHSDTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKHSDTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinThemKH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayMoTK" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoTen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="noiCap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soCMND" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diaChi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hanMucVay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SDT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinThemKHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KTThongTinThemKHResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinSuaKH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayMoTK" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoTen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="noiCap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soCMND" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diaChi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hanMucVay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SDT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinSuaKHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KTThongTinSuaKHResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemKH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemKHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemKHResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="layDSRo">
+        <s:complexType />
+      </s:element>
+      <s:element name="layDSRoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layDSRoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="suaThongTinKH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoTen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="noiCap" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soCMNN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayCap" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gioiTinh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hanMucVay" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="diaChi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SDT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maRo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="suaThongTinKHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="suaThongTinKHResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="layDSKhachHangSoapIn">
+    <wsdl:part name="parameters" element="tns:layDSKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="layDSKhachHangSoapOut">
+    <wsdl:part name="parameters" element="tns:layDSKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="layMotKhachHangSoapIn">
+    <wsdl:part name="parameters" element="tns:layMotKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="layMotKhachHangSoapOut">
+    <wsdl:part name="parameters" element="tns:layMotKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKHSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKH" />
+  </wsdl:message>
+  <wsdl:message name="GetKHSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKHResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKHSDTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKHSDT" />
+  </wsdl:message>
+  <wsdl:message name="GetKHSDTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKHSDTResponse" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinThemKHSoapIn">
+    <wsdl:part name="parameters" element="tns:KTThongTinThemKH" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinThemKHSoapOut">
+    <wsdl:part name="parameters" element="tns:KTThongTinThemKHResponse" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinSuaKHSoapIn">
+    <wsdl:part name="parameters" element="tns:KTThongTinSuaKH" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinSuaKHSoapOut">
+    <wsdl:part name="parameters" element="tns:KTThongTinSuaKHResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemKHSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemKH" />
+  </wsdl:message>
+  <wsdl:message name="ThemKHSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemKHResponse" />
+  </wsdl:message>
+  <wsdl:message name="layDSRoSoapIn">
+    <wsdl:part name="parameters" element="tns:layDSRo" />
+  </wsdl:message>
+  <wsdl:message name="layDSRoSoapOut">
+    <wsdl:part name="parameters" element="tns:layDSRoResponse" />
+  </wsdl:message>
+  <wsdl:message name="suaThongTinKHSoapIn">
+    <wsdl:part name="parameters" element="tns:suaThongTinKH" />
+  </wsdl:message>
+  <wsdl:message name="suaThongTinKHSoapOut">
+    <wsdl:part name="parameters" element="tns:suaThongTinKHResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QLyKHBUSSoap">
+    <wsdl:operation name="layDSKhachHang">
+      <wsdl:input message="tns:layDSKhachHangSoapIn" />
+      <wsdl:output message="tns:layDSKhachHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="layMotKhachHang">
+      <wsdl:input message="tns:layMotKhachHangSoapIn" />
+      <wsdl:output message="tns:layMotKhachHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKH">
+      <wsdl:input message="tns:GetKHSoapIn" />
+      <wsdl:output message="tns:GetKHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKHSDT">
+      <wsdl:input message="tns:GetKHSDTSoapIn" />
+      <wsdl:output message="tns:GetKHSDTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemKH">
+      <wsdl:input message="tns:KTThongTinThemKHSoapIn" />
+      <wsdl:output message="tns:KTThongTinThemKHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaKH">
+      <wsdl:input message="tns:KTThongTinSuaKHSoapIn" />
+      <wsdl:output message="tns:KTThongTinSuaKHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemKH">
+      <wsdl:input message="tns:ThemKHSoapIn" />
+      <wsdl:output message="tns:ThemKHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="layDSRo">
+      <wsdl:input message="tns:layDSRoSoapIn" />
+      <wsdl:output message="tns:layDSRoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="suaThongTinKH">
+      <wsdl:input message="tns:suaThongTinKHSoapIn" />
+      <wsdl:output message="tns:suaThongTinKHSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QLyKHBUSSoap" type="tns:QLyKHBUSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="layDSKhachHang">
+      <soap:operation soapAction="http://tempuri.org/layDSKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layMotKhachHang">
+      <soap:operation soapAction="http://tempuri.org/layMotKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKH">
+      <soap:operation soapAction="http://tempuri.org/GetKH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKHSDT">
+      <soap:operation soapAction="http://tempuri.org/GetKHSDT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemKH">
+      <soap:operation soapAction="http://tempuri.org/KTThongTinThemKH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaKH">
+      <soap:operation soapAction="http://tempuri.org/KTThongTinSuaKH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemKH">
+      <soap:operation soapAction="http://tempuri.org/ThemKH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDSRo">
+      <soap:operation soapAction="http://tempuri.org/layDSRo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suaThongTinKH">
+      <soap:operation soapAction="http://tempuri.org/suaThongTinKH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QLyKHBUSSoap12" type="tns:QLyKHBUSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="layDSKhachHang">
+      <soap12:operation soapAction="http://tempuri.org/layDSKhachHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layMotKhachHang">
+      <soap12:operation soapAction="http://tempuri.org/layMotKhachHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKH">
+      <soap12:operation soapAction="http://tempuri.org/GetKH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKHSDT">
+      <soap12:operation soapAction="http://tempuri.org/GetKHSDT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemKH">
+      <soap12:operation soapAction="http://tempuri.org/KTThongTinThemKH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaKH">
+      <soap12:operation soapAction="http://tempuri.org/KTThongTinSuaKH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemKH">
+      <soap12:operation soapAction="http://tempuri.org/ThemKH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="layDSRo">
+      <soap12:operation soapAction="http://tempuri.org/layDSRo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suaThongTinKH">
+      <soap12:operation soapAction="http://tempuri.org/suaThongTinKH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QLyKHBUS">
+    <wsdl:port name="QLyKHBUSSoap" binding="tns:QLyKHBUSSoap">
+      <soap:address location="http://localhost:50136/QLyKHBUS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QLyKHBUSSoap12" binding="tns:QLyKHBUSSoap12">
+      <soap12:address location="http://localhost:50136/QLyKHBUS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

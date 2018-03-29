@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="timKiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="timKiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timKiemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNopTien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraNopTienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraNopTienResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraRutTien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTien" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soTienToiDa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KtraRutTienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KtraRutTienResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nopTien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soTienMat" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="soTienNop" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nopTienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nopTienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rutTien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soTienMat" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="soTienNop" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rutTienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rutTienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="timKiemSoapIn">
+    <wsdl:part name="parameters" element="tns:timKiem" />
+  </wsdl:message>
+  <wsdl:message name="timKiemSoapOut">
+    <wsdl:part name="parameters" element="tns:timKiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraNopTienSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraNopTien" />
+  </wsdl:message>
+  <wsdl:message name="KtraNopTienSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraNopTienResponse" />
+  </wsdl:message>
+  <wsdl:message name="KtraRutTienSoapIn">
+    <wsdl:part name="parameters" element="tns:KtraRutTien" />
+  </wsdl:message>
+  <wsdl:message name="KtraRutTienSoapOut">
+    <wsdl:part name="parameters" element="tns:KtraRutTienResponse" />
+  </wsdl:message>
+  <wsdl:message name="nopTienSoapIn">
+    <wsdl:part name="parameters" element="tns:nopTien" />
+  </wsdl:message>
+  <wsdl:message name="nopTienSoapOut">
+    <wsdl:part name="parameters" element="tns:nopTienResponse" />
+  </wsdl:message>
+  <wsdl:message name="rutTienSoapIn">
+    <wsdl:part name="parameters" element="tns:rutTien" />
+  </wsdl:message>
+  <wsdl:message name="rutTienSoapOut">
+    <wsdl:part name="parameters" element="tns:rutTienResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QLTienMatBUSSoap">
+    <wsdl:operation name="timKiem">
+      <wsdl:input message="tns:timKiemSoapIn" />
+      <wsdl:output message="tns:timKiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopTien">
+      <wsdl:input message="tns:KtraNopTienSoapIn" />
+      <wsdl:output message="tns:KtraNopTienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutTien">
+      <wsdl:input message="tns:KtraRutTienSoapIn" />
+      <wsdl:output message="tns:KtraRutTienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nopTien">
+      <wsdl:input message="tns:nopTienSoapIn" />
+      <wsdl:output message="tns:nopTienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rutTien">
+      <wsdl:input message="tns:rutTienSoapIn" />
+      <wsdl:output message="tns:rutTienSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QLTienMatBUSSoap" type="tns:QLTienMatBUSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopTien">
+      <soap:operation soapAction="http://tempuri.org/KtraNopTien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutTien">
+      <soap:operation soapAction="http://tempuri.org/KtraRutTien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nopTien">
+      <soap:operation soapAction="http://tempuri.org/nopTien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rutTien">
+      <soap:operation soapAction="http://tempuri.org/rutTien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QLTienMatBUSSoap12" type="tns:QLTienMatBUSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="timKiem">
+      <soap12:operation soapAction="http://tempuri.org/timKiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraNopTien">
+      <soap12:operation soapAction="http://tempuri.org/KtraNopTien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KtraRutTien">
+      <soap12:operation soapAction="http://tempuri.org/KtraRutTien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nopTien">
+      <soap12:operation soapAction="http://tempuri.org/nopTien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rutTien">
+      <soap12:operation soapAction="http://tempuri.org/rutTien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QLTienMatBUS">
+    <wsdl:port name="QLTienMatBUSSoap" binding="tns:QLTienMatBUSSoap">
+      <soap:address location="http://localhost:50136/QLTienMatBUS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QLTienMatBUSSoap12" binding="tns:QLTienMatBUSSoap12">
+      <soap12:address location="http://localhost:50136/QLTienMatBUS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

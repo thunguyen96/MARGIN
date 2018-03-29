@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="layDSCK">
+        <s:complexType />
+      </s:element>
+      <s:element name="layDSCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layDSCKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetmaCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetmaCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetmaCKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemCKResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinThemCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenCK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaTran" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaSan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinThemCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KTThongTinThemCKResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenCK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaTran" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaSan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SuaCKResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinSuaCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="giaTran" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="giaSan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KTThongTinSuaCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KTThongTinSuaCKResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="layDSCKSoapIn">
+    <wsdl:part name="parameters" element="tns:layDSCK" />
+  </wsdl:message>
+  <wsdl:message name="layDSCKSoapOut">
+    <wsdl:part name="parameters" element="tns:layDSCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetmaCKSoapIn">
+    <wsdl:part name="parameters" element="tns:GetmaCK" />
+  </wsdl:message>
+  <wsdl:message name="GetmaCKSoapOut">
+    <wsdl:part name="parameters" element="tns:GetmaCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemCKSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemCK" />
+  </wsdl:message>
+  <wsdl:message name="ThemCKSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinThemCKSoapIn">
+    <wsdl:part name="parameters" element="tns:KTThongTinThemCK" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinThemCKSoapOut">
+    <wsdl:part name="parameters" element="tns:KTThongTinThemCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaCKSoapIn">
+    <wsdl:part name="parameters" element="tns:SuaCK" />
+  </wsdl:message>
+  <wsdl:message name="SuaCKSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinSuaCKSoapIn">
+    <wsdl:part name="parameters" element="tns:KTThongTinSuaCK" />
+  </wsdl:message>
+  <wsdl:message name="KTThongTinSuaCKSoapOut">
+    <wsdl:part name="parameters" element="tns:KTThongTinSuaCKResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QLCKBUSSoap">
+    <wsdl:operation name="layDSCK">
+      <wsdl:input message="tns:layDSCKSoapIn" />
+      <wsdl:output message="tns:layDSCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetmaCK">
+      <wsdl:input message="tns:GetmaCKSoapIn" />
+      <wsdl:output message="tns:GetmaCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemCK">
+      <wsdl:input message="tns:ThemCKSoapIn" />
+      <wsdl:output message="tns:ThemCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemCK">
+      <wsdl:input message="tns:KTThongTinThemCKSoapIn" />
+      <wsdl:output message="tns:KTThongTinThemCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaCK">
+      <wsdl:input message="tns:SuaCKSoapIn" />
+      <wsdl:output message="tns:SuaCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaCK">
+      <wsdl:input message="tns:KTThongTinSuaCKSoapIn" />
+      <wsdl:output message="tns:KTThongTinSuaCKSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QLCKBUSSoap" type="tns:QLCKBUSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="layDSCK">
+      <soap:operation soapAction="http://tempuri.org/layDSCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetmaCK">
+      <soap:operation soapAction="http://tempuri.org/GetmaCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemCK">
+      <soap:operation soapAction="http://tempuri.org/ThemCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemCK">
+      <soap:operation soapAction="http://tempuri.org/KTThongTinThemCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaCK">
+      <soap:operation soapAction="http://tempuri.org/SuaCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaCK">
+      <soap:operation soapAction="http://tempuri.org/KTThongTinSuaCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QLCKBUSSoap12" type="tns:QLCKBUSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="layDSCK">
+      <soap12:operation soapAction="http://tempuri.org/layDSCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetmaCK">
+      <soap12:operation soapAction="http://tempuri.org/GetmaCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemCK">
+      <soap12:operation soapAction="http://tempuri.org/ThemCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinThemCK">
+      <soap12:operation soapAction="http://tempuri.org/KTThongTinThemCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaCK">
+      <soap12:operation soapAction="http://tempuri.org/SuaCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KTThongTinSuaCK">
+      <soap12:operation soapAction="http://tempuri.org/KTThongTinSuaCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QLCKBUS">
+    <wsdl:port name="QLCKBUSSoap" binding="tns:QLCKBUSSoap">
+      <soap:address location="http://localhost:50136/QLCKBUS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QLCKBUSSoap12" binding="tns:QLCKBUSSoap12">
+      <soap12:address location="http://localhost:50136/QLCKBUS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
