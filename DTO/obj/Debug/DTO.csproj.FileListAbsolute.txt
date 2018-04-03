@@ -3,3 +3,8 @@ D:\FSS_MARGIN\MARGIN\DTO\bin\Debug\DTO.pdb
 D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.dll
 D:\FSS_MARGIN\MARGIN\DTO\obj\Debug\DTO.pdb
+G:\FSS2018_team1\DTO\bin\Debug\DTO.dll
+G:\FSS2018_team1\DTO\bin\Debug\DTO.pdb
+G:\FSS2018_team1\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+G:\FSS2018_team1\DTO\obj\Debug\DTO.dll
+G:\FSS2018_team1\DTO\obj\Debug\DTO.pdb

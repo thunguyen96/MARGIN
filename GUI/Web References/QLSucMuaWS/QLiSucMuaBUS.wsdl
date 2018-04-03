@@ -82,6 +82,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="soTKLK" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="maCK" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="sl" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="slBD" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="duNoBD" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="gtMua" type="s:long" />
             <s:element minOccurs="1" maxOccurs="1" name="tienMat" type="s:long" />
           </s:sequence>

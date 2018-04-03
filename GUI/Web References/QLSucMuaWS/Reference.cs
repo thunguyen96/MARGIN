@@ -252,23 +252,25 @@ namespace GUI.QLSucMuaWS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemMuaCK", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ThemMuaCK(string soTKLK, string maCK, long sl, long gtMua, long tienMat) {
+        public bool ThemMuaCK(string soTKLK, string maCK, long sl, long slBD, long duNoBD, long gtMua, long tienMat) {
             object[] results = this.Invoke("ThemMuaCK", new object[] {
                         soTKLK,
                         maCK,
                         sl,
+                        slBD,
+                        duNoBD,
                         gtMua,
                         tienMat});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ThemMuaCKAsync(string soTKLK, string maCK, long sl, long gtMua, long tienMat) {
-            this.ThemMuaCKAsync(soTKLK, maCK, sl, gtMua, tienMat, null);
+        public void ThemMuaCKAsync(string soTKLK, string maCK, long sl, long slBD, long duNoBD, long gtMua, long tienMat) {
+            this.ThemMuaCKAsync(soTKLK, maCK, sl, slBD, duNoBD, gtMua, tienMat, null);
         }
         
         /// <remarks/>
-        public void ThemMuaCKAsync(string soTKLK, string maCK, long sl, long gtMua, long tienMat, object userState) {
+        public void ThemMuaCKAsync(string soTKLK, string maCK, long sl, long slBD, long duNoBD, long gtMua, long tienMat, object userState) {
             if ((this.ThemMuaCKOperationCompleted == null)) {
                 this.ThemMuaCKOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemMuaCKOperationCompleted);
             }
@@ -276,6 +278,8 @@ namespace GUI.QLSucMuaWS {
                         soTKLK,
                         maCK,
                         sl,
+                        slBD,
+                        duNoBD,
                         gtMua,
                         tienMat}, this.ThemMuaCKOperationCompleted, userState);
         }

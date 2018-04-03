@@ -179,26 +179,45 @@ namespace DAO
         /// <param name="maCK"></param>
         /// <param name="sl"></param>
         /// <returns></returns>
-        public static bool ThemMuaCK(string soTKLK, string maCK, long sl, long gtMua, long tienMat)
+        public static bool ThemMuaCK(string soTKLK, string maCK, long sl, long slBD, long duNoBD, long gtMua, long tienMat)
         {
             try
             {
-                long soDu = 0;
+                long soDu = duNoBD;
                 if(gtMua > tienMat)
                 {
                     soDu = gtMua - tienMat;
+                    tienMat = 0;
                 }
-                OracleCommand oracleCommand = new OracleCommand();
-                oracleCommand.CommandText = "INSERT INTO KHACHHANG_CHUNGKHOAN (SO_TKLK, MA_CK, SO_LUONG) VALUES (:sO_TKLK, :mA_CK, :sO_LUONG)";
-                oracleCommand.Parameters.Add("sO_TKLK", soTKLK);
-                oracleCommand.Parameters.Add("mA_CK", maCK);
-                oracleCommand.Parameters.Add("sO_LUONG", sl);
+                else
+                {
+                    tienMat -= gtMua;
+                }
+                long tongSo = sl + slBD;
 
+
+                OracleCommand oracleCommand = new OracleCommand();
+                oracleCommand.CommandText = "UPDATE KHACHHANG_CHUNGKHOAN SET SO_LUONG = :sl WHERE SO_TKLK = :soTKLK AND MA_CK = :maCK";
+                oracleCommand.Parameters.Add("sl", tongSo);
+                oracleCommand.Parameters.Add("soTKLK", soTKLK);
+                oracleCommand.Parameters.Add("maCK", maCK);
                 DataProvider.ExcuteNonQuery(oracleCommand);
 
+                if(!ktTonTaiMaCK(soTKLK, maCK))
+                {
+                    oracleCommand.Parameters.Clear();
+                    oracleCommand.CommandText = "INSERT INTO KHACHHANG_CHUNGKHOAN (SO_TKLK, MA_CK, SO_LUONG) VALUES (:sO_TKLK, :mA_CK, :sO_LUONG)";
+                    oracleCommand.Parameters.Add("sO_TKLK", soTKLK);
+                    oracleCommand.Parameters.Add("mA_CK", maCK);
+                    oracleCommand.Parameters.Add("sO_LUONG", sl);
+
+                    DataProvider.ExcuteNonQuery(oracleCommand);
+                }
+              
                 oracleCommand.Parameters.Clear();
-                oracleCommand.CommandText = "UPDATE KHACH_HANG SET SO_DU_NO = :soDuNo WHERE SO_TKLK = :soTKLK";
+                oracleCommand.CommandText = "UPDATE KHACH_HANG SET SO_DU_NO = :soDuNo, SO_TIEN_MAT = :tM WHERE SO_TKLK = :soTKLK";
                 oracleCommand.Parameters.Add("soDuNo", soDu);
+                oracleCommand.Parameters.Add("tM", tienMat);
                 oracleCommand.Parameters.Add("soTKLK", soTKLK);
                 DataProvider.ExcuteNonQuery(oracleCommand);
 
@@ -211,5 +230,29 @@ namespace DAO
             }
         }
 
+        public static bool ktTonTaiMaCK(string soTKLK, string maCK)
+        {
+            try
+            {
+                OracleCommand oracleCommand = new OracleCommand();
+                oracleCommand.CommandText = "SELECT * FROM KHACHHANG_CHUNGKHOAN WHERE SO_TKLK = :soTKLK AND MA_CK = :maCK";
+                oracleCommand.Parameters.Add("soTKLK", soTKLK);
+                oracleCommand.Parameters.Add("maCK", maCK);
+                OracleDataReader oracleDataReader = DataProvider.GetOracleDataReader(oracleCommand);
+
+                if(oracleDataReader != null && oracleDataReader.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

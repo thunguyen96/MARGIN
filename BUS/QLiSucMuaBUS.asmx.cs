@@ -83,9 +83,9 @@ namespace BUS
         }
 
         [WebMethod]
-        public bool ThemMuaCK(string soTKLK, string maCK, long sl, long gtMua, long tienMat)
+        public bool ThemMuaCK(string soTKLK, string maCK, long sl, long slBD, long duNoBD, long gtMua, long tienMat)
         {
-            return QliSucMuaDAO.ThemMuaCK(soTKLK, maCK, sl, gtMua, tienMat);
+            return QliSucMuaDAO.ThemMuaCK(soTKLK, maCK, sl, slBD, duNoBD, gtMua, tienMat);
         }
     }
 }

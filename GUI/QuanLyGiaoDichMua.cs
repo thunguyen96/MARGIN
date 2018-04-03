@@ -152,7 +152,8 @@ namespace GUI
                         double temp;
                         temp =(double.Parse(txtGiaVay.Text) * double.Parse(txtTiLeVay.Text) / 100) / double.Parse(txtGiaMua.Text);
                         double SMTD = SucMuaCB / (1 - temp);
-                        txtSMTD.Text = SMTD.ToString();
+                        long result = (long) Math.Round(SMTD);
+                        txtSMTD.Text = result.ToString();
                     }
                 }
             }
@@ -185,6 +186,37 @@ namespace GUI
             Check check = new Check();
             if (txtGiaMua.Text != "" && txtSLMua.Text != "" && check.LaMotSoNguyenDuong(txtGiaMua.Text) && check.LaMotSoNguyenDuong(txtSLMua.Text))
             {
+                // Tinh gia tri mua
+                if (txtGiaMua.Text != "" && txtSLMua.Text != "")
+                {
+                    txtGTMua.Text = (long.Parse(txtGiaMua.Text) * long.Parse(txtSLMua.Text)).ToString();
+                }
+                else
+                {
+                    txtGTMua.Text = "";
+                }
+                
+            }
+            if(txtGiaMua.Text != "" && check.LaMotSoNguyenDuong(txtGiaMua.Text) && txtSMCB.Text != "")
+            {
+                // Tinh so luong mua max
+                double smBD = double.Parse(txtSMCB.Text);
+                double gm = double.Parse(txtGiaMua.Text);
+                double gv = double.Parse(txtGiaVay.Text);
+                double tlv = double.Parse(txtTiLeVay.Text);
+                double slMax = smBD / (gm - gv * tlv);
+                long result = (long) Math.Round(slMax);
+                txtSLMuaMax.Text = result.ToString();
+            }
+           
+        }
+
+        private void txtSLMua_TextChanged(object sender, EventArgs e)
+        {
+            Check check = new Check();
+            if (txtGiaMua.Text != "" && txtSLMua.Text != "" && check.LaMotSoNguyenDuong(txtGiaMua.Text) && check.LaMotSoNguyenDuong(txtSLMua.Text))
+            {
+                // Tinh gia tri mua
                 if (txtGiaMua.Text != "" && txtSLMua.Text != "")
                 {
                     txtGTMua.Text = (long.Parse(txtGiaMua.Text) * long.Parse(txtSLMua.Text)).ToString();
@@ -194,12 +226,6 @@ namespace GUI
                     txtGTMua.Text = "";
                 }
             }
-           
-        }
-
-        private void txtSLMua_TextChanged(object sender, EventArgs e)
-        {
-            TinhGTMua();
         }
 
         private void txtGTMua_TextChanged(object sender, EventArgs e)
@@ -213,7 +239,6 @@ namespace GUI
             {
                 long SucMuaCB = long.Parse(txtTienMat.Text) + Math.Min(long.Parse(txtTSDB.Text), long.Parse(txtHanMucVay.Text)) - long.Parse(txtSoDuNo.Text);
                 txtSMCB.Text = SucMuaCB.ToString();
-
             }
         }
 
@@ -230,7 +255,6 @@ namespace GUI
             if(txtGiaMua.Text == "")
             {
                 lblError.Text = "Bạn chưa nhập giá mua";
-
             }
             else
             {
@@ -247,7 +271,7 @@ namespace GUI
                     }
                     else
                     {
-                        if (!check.LaMotSoNguyenDuong(txtSLMua.Text))
+                        if (!check.LaMotSoNguyenDuong(txtSLMua.Text) || long.Parse(txtSLMua.Text) > long.Parse(txtSLMuaMax.Text))
                         {
                             lblError.Text = "Số lượng mua không hợp lệ";
                         }
@@ -261,14 +285,23 @@ namespace GUI
                             {
                                 long gtMua = long.Parse(txtGiaMua.Text) * long.Parse(txtSLMua.Text);
                                 QLiSucMuaBUS qLiSucMuaBUS = new QLiSucMuaBUS();
-                                if(qLiSucMuaBUS.ThemMuaCK(txtSoTKLK.Text, cmbMaCK.Text, long.Parse(txtSLMua.Text), long.Parse(txtGiaMua.Text), long.Parse(txtTienMat.Text)))
+                                if(qLiSucMuaBUS.ThemMuaCK(txtSoTKLK.Text, cmbMaCK.Text, long.Parse(txtSLMua.Text), long.Parse(txtSL.Text), long.Parse(txtSoDuNo.Text), long.Parse(txtGiaMua.Text), long.Parse(txtTienMat.Text)))
                                 {
                                     MessageBox.Show("Mua chứng khoán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                   
+                                    object o = new object();
+                                    EventArgs eventArgs = new EventArgs();
+                                    textBox1_Leave(o, eventArgs);
+                                    groupBoxTTMaCK_Enter(o, eventArgs);
+                                    cmbMaCK.SelectedIndex = 0;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Đã có lỗi sảy ra, Mua chứng khoán thất bại");
                                 }
                             }
                         }
                     }
-                    
                 }
             }
         }
@@ -295,7 +328,6 @@ namespace GUI
                 }
                 else
                 {
-
                     foreach (QLiSucMuaDTO temp in list)
                     {
                         txtHoTen.Text = temp.HoTen;
@@ -304,7 +336,6 @@ namespace GUI
                         txtTienMat.Text = temp.TienMat.ToString();
                         txtHanMucVay.Text = temp.HanMucVay.ToString();
                         txtSoDuNo.Text = temp.SoDuNo.ToString();
-
                         lblError.Text = "";
                     }
                 }

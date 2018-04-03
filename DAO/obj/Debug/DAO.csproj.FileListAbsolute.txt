@@ -12,3 +12,16 @@ D:\FSS_MARGIN\MARGIN\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\FSS_MARGIN\MARGIN\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\FSS_MARGIN\MARGIN\DAO\obj\Debug\DAO.exe
 D:\FSS_MARGIN\MARGIN\DAO\obj\Debug\DAO.pdb
+G:\FSS2018_team1\DAO\bin\Debug\DAO.exe.config
+G:\FSS2018_team1\DAO\bin\Debug\DAO.exe
+G:\FSS2018_team1\DAO\bin\Debug\DAO.pdb
+G:\FSS2018_team1\DAO\bin\Debug\DTO.dll
+G:\FSS2018_team1\DAO\bin\Debug\Oracle.ManagedDataAccess.dll
+G:\FSS2018_team1\DAO\bin\Debug\DTO.pdb
+G:\FSS2018_team1\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+G:\FSS2018_team1\DAO\obj\Debug\DAO.Form1.resources
+G:\FSS2018_team1\DAO\obj\Debug\DAO.Properties.Resources.resources
+G:\FSS2018_team1\DAO\obj\Debug\DAO.csproj.GenerateResource.Cache
+G:\FSS2018_team1\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+G:\FSS2018_team1\DAO\obj\Debug\DAO.exe
+G:\FSS2018_team1\DAO\obj\Debug\DAO.pdb
